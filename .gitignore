@@ -26,6 +26,7 @@ pnpm-debug.log*
 # rå kildemateriale / research (tunge skann, ikke for web eller deploy)
 _raw/
 images/tordenskiold/
+images/til restaurering/
 
 # generert av synk-steget (prebuild) fra images/
 public/images/
