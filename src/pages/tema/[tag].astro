@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { categorySlug } from '../../lib/categories';
+import { firstImage } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', (entry) => entry.data.lang === 'nb' && entry.data.type === 'post' && entry.data.status === 'publish');
+  const tags = new Map<string, string>();
+  for (const post of posts) {
+    for (const tag of post.data.tags) {
+      tags.set(categorySlug(tag), tag);
+    }
+  }
+  return [...tags.entries()].map(([slug, name]) => ({
+    params: { tag: slug },
+    props: { name },
+  }));
+}
+
+const { name } = Astro.props;
+
+const posts = (await getCollection('posts', (entry) => entry.data.lang === 'nb' && entry.data.type === 'post' && entry.data.status === 'publish'))
+  .filter((p) => p.data.tags.includes(name))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title={`${name} – Holmestrand Museum`}>
+	<div class="container">
+		<h1>{name}</h1>
+		<div class="story-grid">
+			{posts.map((post) => (
+				<StoryCard
+					title={post.data.title}
+					date={post.data.date}
+					href={`/historier/${post.data.slug}/`}
+					image={firstImage(post.body, post.data.image)}
+				/>
+			))}
+		</div>
+	</div>
+</Layout>

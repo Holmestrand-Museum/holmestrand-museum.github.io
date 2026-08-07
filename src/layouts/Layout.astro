@@ -1,0 +1,61 @@
+---
+import { Image, getImage } from 'astro:assets';
+import logo from '../assets/hmflogo.png';
+import heroImage from '../assets/hero.png';
+import '../styles/global.css';
+import { CATEGORIES, categorySlug, categoryLabel } from '../lib/categories';
+
+interface Props {
+  title: string;
+  showHero?: boolean;
+}
+
+const { title, showHero = false } = Astro.props;
+
+const heroBg = showHero ? await getImage({ src: heroImage, width: 1600 }) : null;
+---
+
+<html lang="nb">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header
+			class:list={["hero", { "hero--small": !showHero }]}
+			style={heroBg ? `background-image: linear-gradient(180deg, rgba(46,42,38,0.45), rgba(46,42,38,0.35)), url(${heroBg.src})` : undefined}
+		>
+			<nav class="hero-nav">
+				<a href="/" class="hero-logo">
+					<Image src={logo} alt="Holmestrand Museum" width={showHero ? 160 : 72} />
+				</a>
+				<ul class="hero-menu">
+					{CATEGORIES.map((cat) => (
+						<li><a href={`/kategori/${categorySlug(cat)}/`}>{categoryLabel(cat)}</a></li>
+					))}
+				</ul>
+			</nav>
+			{showHero && (
+				<div class="hero-content">
+					<h1>Holmestrand Museum</h1>
+					<p>Byen under fjellet</p>
+				</div>
+			)}
+		</header>
+		<div class="below-hero">
+			<form class="hero-search" action="/sok/" method="get">
+				<input type="search" name="q" placeholder="Søk..." aria-label="Søk" />
+			</form>
+		</div>
+		<main>
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<p>Holmestrand Museum</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const query = Astro.url.searchParams.get('q') ?? '';
+---
+
+<Layout title="Søk – Holmestrand Museum">
+	<div class="container">
+		<h1>Søk</h1>
+		<p>Søkefunksjon kommer snart.{query && ` Du søkte etter: "${query}"`}</p>
+	</div>
+</Layout>

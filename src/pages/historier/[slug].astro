@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { resolveImage } from '../../lib/posts';
+import Gallery from '../../components/Gallery.astro';
+import BeforeAfter from '../../components/BeforeAfter.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', (entry) => entry.data.lang === 'nb' && entry.data.type === 'post' && entry.data.status === 'publish');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const hero = post.data.hero ? resolveImage(post.data.hero) : null;
+---
+
+<Layout title={`${post.data.title} – Holmestrand Museum`}>
+	<article class="container story">
+		{hero && <img class="story-hero" src={hero} alt="" />}
+		<h1>{post.data.heading ?? post.data.title}</h1>
+		<Content />
+		{post.data.gallery && <Gallery folder={post.data.gallery} />}
+		{post.data.beforeafter && <BeforeAfter folder={post.data.beforeafter} />}
+	</article>
+</Layout>
+
+<style>
+	.story-hero {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: 480px;
+		object-fit: cover;
+		border-radius: 8px;
+		margin-bottom: 1.75rem;
+	}
+</style>

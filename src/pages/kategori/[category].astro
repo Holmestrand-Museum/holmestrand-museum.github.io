@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { CATEGORIES, FRONT_CATEGORIES, categorySlug, categoryLabel } from '../../lib/categories';
+import { firstImage } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const all = new Set([...CATEGORIES, ...FRONT_CATEGORIES]);
+  return [...all].map((cat) => ({
+    params: { category: categorySlug(cat) },
+    props: { name: cat },
+  }));
+}
+
+const { name } = Astro.props;
+const label = categoryLabel(name);
+
+const posts = (await getCollection('posts', (entry) => entry.data.lang === 'nb' && entry.data.type === 'post' && entry.data.status === 'publish'))
+  .filter((p) => p.data.categories.includes(name))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title={`${label} – Holmestrand Museum`}>
+	<div class="container">
+		<h1>{label}</h1>
+		<div class="story-grid">
+			{posts.map((post) => (
+				<StoryCard
+					title={post.data.title}
+					date={post.data.date}
+					href={`/historier/${post.data.slug}/`}
+					image={firstImage(post.body, post.data.image)}
+				/>
+			))}
+		</div>
+	</div>
+</Layout>

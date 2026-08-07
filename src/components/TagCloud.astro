@@ -1,0 +1,25 @@
+---
+import { categorySlug } from '../lib/categories';
+
+interface Props {
+  tags: { tag: string; count: number }[];
+  limit?: number;
+}
+
+const { tags, limit = 40 } = Astro.props;
+const top = tags.slice(0, limit);
+const max = Math.max(...top.map((t) => t.count), 1);
+const min = Math.min(...top.map((t) => t.count), 1);
+
+function size(count: number): string {
+  if (max === min) return '1rem';
+  const ratio = (count - min) / (max - min);
+  return `${0.85 + ratio * 0.9}rem`;
+}
+---
+
+<div class="tag-cloud">
+	{top.map(({ tag, count }) => (
+		<a href={`/tema/${categorySlug(tag)}/`} style={`font-size: ${size(count)}`}>{tag}</a>
+	))}
+</div>

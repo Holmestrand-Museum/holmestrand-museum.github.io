@@ -1,0 +1,195 @@
+---
+import data from '../data/restaurerte.json';
+
+interface Props {
+  folder: string;
+}
+
+const { folder } = Astro.props;
+
+interface Pair {
+  orig: string;
+  rest: string;
+  title: string;
+  year: string;
+  photographer: string;
+  description: string;
+}
+
+const items = (data as Pair[]).map((it) => ({
+  orig: `/images/${folder}/${it.orig}`,
+  rest: `/images/${folder}/${it.rest}`,
+  title: it.title,
+  year: it.year,
+  description: (it.description ?? '').trim(),
+  credit: it.photographer ? `Originalfoto: ${it.photographer}` : '',
+}));
+---
+
+<section class="beforeafter">
+  {
+    items.map((it) => (
+      <figure class="ba">
+        <div class="ba-frame">
+          <img
+            class="ba-base"
+            src={it.orig}
+            alt={`${it.title} – original`}
+            loading="lazy"
+            style="display:block;width:100%;height:auto"
+          />
+          <img
+            class="ba-top-img"
+            src={it.rest}
+            alt={`${it.title} – restaurert`}
+            loading="lazy"
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(0 50% 0 0)"
+          />
+          <button
+            type="button"
+            class="ba-handle"
+            style="left:50%"
+            role="slider"
+            aria-label={`Sammenlign original og restaurert: ${it.title}`}
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="50"
+          >
+            <span class="ba-arrows">‹›</span>
+          </button>
+        </div>
+        <figcaption>
+          <h3>{it.title}<span class="ba-year">{it.year ? `, ${it.year}` : ''}</span></h3>
+          {it.description && <p>{it.description}</p>}
+          {it.credit && <p class="ba-credit">{it.credit}</p>}
+        </figcaption>
+      </figure>
+    ))
+  }
+</section>
+
+<script is:inline>
+  document.querySelectorAll('.beforeafter .ba-frame').forEach((frame) => {
+    const top = frame.querySelector('.ba-top-img');
+    const handle = frame.querySelector('.ba-handle');
+
+    function apply(pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      top.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      handle.style.left = pct + '%';
+      handle.setAttribute('aria-valuenow', Math.round(pct));
+    }
+    function fromX(clientX) {
+      const rect = frame.getBoundingClientRect();
+      apply(((clientX - rect.left) / rect.width) * 100);
+    }
+
+    let dragging = false;
+    frame.addEventListener('pointerdown', (e) => {
+      dragging = true;
+      frame.setPointerCapture(e.pointerId);
+      fromX(e.clientX);
+    });
+    frame.addEventListener('pointermove', (e) => {
+      if (dragging) fromX(e.clientX);
+    });
+    const stop = () => {
+      dragging = false;
+    };
+    frame.addEventListener('pointerup', stop);
+    frame.addEventListener('pointercancel', stop);
+
+    handle.addEventListener('keydown', (e) => {
+      const cur = 100 - (parseFloat((top.style.clipPath.match(/[\d.]+/) || [50])[0]) || 50);
+      if (e.key === 'ArrowLeft') {
+        apply(cur - 4);
+        e.preventDefault();
+      } else if (e.key === 'ArrowRight') {
+        apply(cur + 4);
+        e.preventDefault();
+      }
+    });
+  });
+</script>
+
+<style>
+  .beforeafter {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  .ba {
+    margin: 0;
+  }
+  .ba-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+    touch-action: none;
+    cursor: ew-resize;
+    user-select: none;
+    line-height: 0;
+  }
+  /* Originalen (.ba-base) definerer rammens størrelse; den restaurerte (.ba-top-img)
+     fyller nøyaktig samme boks. Begge stilene ligger inline på elementene for å være
+     robuste mot global bilde-CSS og scoping. */
+  .ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    cursor: ew-resize;
+  }
+  .ba-arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: #fff;
+    color: #2b2620;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.05em;
+  }
+  .ba-handle:focus-visible {
+    outline: none;
+  }
+  .ba-handle:focus-visible .ba-arrows {
+    outline: 3px solid var(--color-accent, #8a5a2b);
+    outline-offset: 2px;
+  }
+  figcaption {
+    margin-top: 1rem;
+  }
+  figcaption h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.3rem;
+  }
+  .ba-year {
+    color: #8a7f6f;
+    font-weight: normal;
+  }
+  figcaption p {
+    margin: 0.3rem 0;
+  }
+  .ba-credit {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #8a7f6f;
+  }
+</style>

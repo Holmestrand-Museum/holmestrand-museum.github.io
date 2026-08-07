@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import StoryCard from '../components/StoryCard.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import { FRONT_CATEGORIES, categorySlug, categoryLabel } from '../lib/categories';
+import { firstImage } from '../lib/posts';
+
+const allPosts = await getCollection('posts', (entry) => entry.data.lang === 'nb' && entry.data.type === 'post' && entry.data.status === 'publish');
+allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const FRONT_CATEGORY_IMAGES: Record<string, string> = {
+  Personene: '/images/bilde-127.jpg',
+  Historier: '/images/bilde-005.jpg',
+  Stedene: '/images/bilde-199.jpg',
+  Quiz: '/images/bilde-212.png',
+  Bilder: '/images/bilde-196.png',
+};
+
+const categoryTiles = FRONT_CATEGORIES.map((cat) => {
+  const post = allPosts.find((p) => p.data.categories.includes(cat) && firstImage(p.body));
+  return {
+    name: categoryLabel(cat),
+    href: `/kategori/${categorySlug(cat)}/`,
+    image: FRONT_CATEGORY_IMAGES[cat] ?? (post ? firstImage(post.body) : null),
+  };
+});
+
+const latest = allPosts.slice(0, 3);
+---
+
+<Layout title="Holmestrand Museum" showHero>
+	<section class="explore-section">
+		<div class="container">
+			<div class="explore-grid">
+				{categoryTiles.map((cat) => (
+					<CategoryCard name={cat.name} href={cat.href} image={cat.image} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="curated-section">
+		<div class="container">
+			<h2>Siste artikler</h2>
+			<div class="story-grid">
+				{latest.map((post) => (
+					<StoryCard
+						title={post.data.title}
+						date={post.data.date}
+						href={`/historier/${post.data.slug}/`}
+						image={firstImage(post.body, post.data.image)}
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+</Layout>

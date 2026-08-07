@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string;
+  href: string;
+  image: string | null;
+}
+
+const { name, href, image } = Astro.props;
+---
+
+<a class="category-tile" href={href} style={image ? `background-image: url(${image})` : undefined}>
+	<span class="category-tile-label">{name}</span>
+</a>

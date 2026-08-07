@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  href: string;
+  image: string | null;
+}
+
+const { title, date, href, image } = Astro.props;
+---
+
+<a class="story-card" href={href}>
+	{image && <img src={image} alt="" />}
+	<div class="story-body">
+		<h2>{title}</h2>
+		<time datetime={date.toISOString()}>
+			{date.toLocaleDateString('nb-NO', { year: 'numeric', month: 'long', day: 'numeric' })}
+		</time>
+	</div>
+</a>
