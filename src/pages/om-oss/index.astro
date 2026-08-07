@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const styret = [
+	{ rolle: 'Styreleder', navn: 'Jan Gunnar Flannum' },
+	{ rolle: 'Sekretær', navn: 'Kari Johansen' },
+	{ rolle: 'Kasserer', navn: 'Espen Watne Andresen' },
+	{ rolle: 'Medlem', navn: 'Randi Løvås Meland' },
+	{ rolle: 'Medlem', navn: 'Tone Cathrine Bahus Rødningen' },
+];
+
+const kontakt = [
+	{ label: 'E-post', value: 'holmestrand.museum@gmail.com', href: 'mailto:holmestrand.museum@gmail.com' },
+	{ label: 'Telefon', value: '926 624 77 (kasserer)', href: 'tel:+4792662477' },
+	{ label: 'Besøksadresse', value: 'Nils Kjærsgate 4' },
+	{ label: 'Organisasjonsnummer', value: '971 316 063' },
+	{ label: 'VIPPS', value: '20626' },
+	{ label: 'Kontonummer', value: '2520.23.00033' },
+];
+
+const innmeldingUrl = 'https://holmestrandmuseumsforening.portal.styreweb.com/arrangement/ArrangementSession?ID=Innmelding';
+---
+
+<Layout title="Om oss – Holmestrand Museum">
+	<article class="om-oss container">
+		<h1>Om oss</h1>
+
+		<p class="lead">
+			Holmestrand Museum er drevet av frivillige i Holmestrand Museumsforening (HMF).
+			Alt arbeidet som gjøres — fra vedlikehold og renhold til administrasjon og
+			utvikling av utstillinger — er gjort av frivillige.
+		</p>
+
+		<h2>Bli med på dugnaden</h2>
+		<p>
+			Hvis du har lyst til å være med på dugnaden, er vi en gjeng som treffes på
+			museet hver onsdag kl. 10.
+		</p>
+		<p>
+			Men det er masse som må gjøres på andre tider også, så send oss gjerne en
+			e-post så finner vi en dag som passer.
+		</p>
+
+		<h2>Medlemskap</h2>
+		<p>Kontingenten for medlemskap er i 2025 kr. 250,-.</p>
+		<p>
+			<a class="cta" href={innmeldingUrl} target="_blank" rel="noopener">Meld deg inn her</a>
+		</p>
+		<p>
+			Du kan også vippse <strong>kr. 250 til 20626</strong> — husk å skrive ditt navn,
+			telefonnummer og e-post.
+		</p>
+
+		<h2>Styret</h2>
+		<p>Årsmøtet er øverste organ i HMF. Styret i HMF består av:</p>
+		<ul class="styre-liste">
+			{styret.map((s) => (
+				<li><span class="rolle">{s.rolle}:</span> {s.navn}</li>
+			))}
+		</ul>
+
+		<h2>Kontaktinformasjon</h2>
+		<dl class="kontakt-liste">
+			{kontakt.map((k) => (
+				<div class="kontakt-rad">
+					<dt>{k.label}</dt>
+					<dd>{k.href ? <a href={k.href}>{k.value}</a> : k.value}</dd>
+				</div>
+			))}
+		</dl>
+
+		<h2>Her finner du oss</h2>
+		<div class="kart-embed">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1275.9905815871284!2d10.31341714535245!3d59.49128777663552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46413452624b2853%3A0x757ea6f46461e33d!2sHolmestrand%20Museumsforening!5e0!3m2!1sno!2sno!4v1786100200581!5m2!1sno!2sno"
+				title="Kart til Holmestrand Museumsforening, Nils Kjærsgate 4"
+				loading="lazy"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.om-oss {
+		max-width: 720px;
+		padding-top: 2.5rem;
+		padding-bottom: 3rem;
+	}
+
+	.om-oss .lead {
+		font-size: 1.15rem;
+		line-height: 1.65;
+	}
+
+	.om-oss h2 {
+		margin-top: 2.25rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.cta {
+		display: inline-block;
+		background: var(--color-accent);
+		color: #fff;
+		text-decoration: none;
+		padding: 0.55rem 1.1rem;
+		border-radius: 4px;
+		font-family: var(--font-serif);
+	}
+
+	.cta:hover {
+		filter: brightness(0.92);
+	}
+
+	.styre-liste {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.styre-liste li {
+		padding: 0.3rem 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.styre-liste .rolle {
+		font-weight: 600;
+	}
+
+	.kontakt-liste {
+		margin: 0;
+	}
+
+	.kontakt-rad {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+		padding: 0.4rem 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.kontakt-rad dt {
+		flex: 0 0 12rem;
+		font-weight: 600;
+	}
+
+	.kontakt-rad dd {
+		margin: 0;
+	}
+
+	.kart-embed {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		max-height: 450px;
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	.kart-embed iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	@media (max-width: 520px) {
+		.kontakt-rad dt {
+			flex-basis: 100%;
+		}
+	}
+</style>

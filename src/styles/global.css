@@ -422,45 +422,33 @@ a {
   padding: 1rem;
 }
 
-/* Åpningstider (forside-kort) */
+/* Åpningstider (forside-stripe) */
 .opening-hours-section {
-  padding: 2.5rem 1.5rem 0.5rem;
+  padding: 1.75rem 1.5rem 0.25rem;
 }
 
 .opening-hours {
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   text-align: center;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-top: 3px solid var(--color-accent);
-  border-radius: 4px;
-  padding: 2rem 2rem 1.75rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.opening-hours strong {
+  color: var(--color-text);
 }
 
 .opening-hours-icon {
-  width: 34px;
-  height: 34px;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
   color: var(--color-accent);
-}
-
-.opening-hours h2 {
-  font-size: 1.5rem;
-  margin: 0.4rem 0 0.6rem;
-  letter-spacing: 0.02em;
-}
-
-.opening-hours-time {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  color: var(--color-accent);
-  margin: 0 0 0.9rem;
-}
-
-.opening-hours-contact {
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  margin: 0;
 }
 
 .site-footer {

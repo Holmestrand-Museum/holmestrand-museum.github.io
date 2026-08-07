@@ -37,6 +37,7 @@ const heroBg = showHero ? await getImage({ src: heroImage, width: 1600 }) : null
 					{CATEGORIES.map((cat) => (
 						<li><a href={`/kategori/${categorySlug(cat)}/`}>{categoryLabel(cat)}</a></li>
 					))}
+					<li><a href="/om-oss/">Om oss</a></li>
 				</ul>
 			</nav>
 			{showHero && (
@@ -55,7 +56,7 @@ const heroBg = showHero ? await getImage({ src: heroImage, width: 1600 }) : null
 			<slot />
 		</main>
 		<footer class="site-footer">
-			<p class="footer-hours"><strong>Åpent søndager kl. 12.00–15.00.</strong> Omvisning utenom? <a href="mailto:holmestrand.museum@gmail.com">holmestrand.museum@gmail.com</a></p>
+			<p class="footer-hours"><strong>Åpent søndager kl. 12.00–15.00.</strong> Passer det ikke? Ta kontakt med oss så finner vi en løsning.<br /><a href="mailto:holmestrand.museum@gmail.com">holmestrand.museum@gmail.com</a> · telefon <a href="tel:+4792662477">926 624 77</a></p>
 			<p>Holmestrand Museum</p>
 		</footer>
 	</body>
