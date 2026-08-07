@@ -425,19 +425,21 @@ a {
 /* Åpningstider (forside-stripe) */
 .opening-hours-section {
   padding: 1.75rem 1.5rem 0.25rem;
+  text-align: center;
 }
 
 .opening-hours {
-  max-width: 720px;
+  display: inline-block;
+  max-width: min(720px, 100%);
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  text-align: center;
+  text-align: left;
   color: var(--color-muted);
   font-size: 1rem;
   line-height: 1.5;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.7rem 1.25rem;
+  background: #fff;
 }
 
 .opening-hours strong {
@@ -445,10 +447,11 @@ a {
 }
 
 .opening-hours-icon {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   color: var(--color-accent);
+  vertical-align: -0.28em;
+  margin-right: 0.5rem;
 }
 
 .site-footer {
