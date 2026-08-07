@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import { resolveImage } from '../../lib/posts';
+import type { QuizData } from '../../lib/quiz';
+
+// Auto-oppdager alle quizer i src/data/quiz/*.json — legg bare til en fil.
+const modules = import.meta.glob<QuizData>('../../data/quiz/*.json', { eager: true });
+
+const quizzes = Object.entries(modules)
+  .map(([path, mod]) => {
+    const data = (mod as { default?: QuizData }).default ?? (mod as QuizData);
+    const slug = path.split('/').pop()!.replace(/\.json$/, '');
+    return {
+      slug,
+      title: data.title,
+      image: data.image ? resolveImage(data.image) : null,
+    };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title, 'nb', { numeric: true }));
+---
+
+<Layout title="Quiz – Holmestrand Museum">
+	<div class="container">
+		<h1>Quiz</h1>
+		<p class="quiz-lead">Test hvor godt du kjenner Holmestrand. Velg en quiz — ett spørsmål om gangen, og et lite faktadrypp underveis.</p>
+		{quizzes.length === 0 ? (
+			<p>Ingen quizer ennå. De kommer snart.</p>
+		) : (
+			<div class="explore-grid quiz-grid">
+				{quizzes.map((q) => (
+					<CategoryCard name={q.title} href={`/quiz/${q.slug}/`} image={q.image} />
+				))}
+			</div>
+		)}
+	</div>
+</Layout>
+
+<style>
+	.quiz-lead {
+		max-width: 640px;
+		color: var(--color-muted);
+		margin: 0 0 2rem;
+	}
+	.quiz-grid {
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	}
+	@media (min-width: 800px) {
+		.quiz-grid {
+			grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		}
+	}
+</style>

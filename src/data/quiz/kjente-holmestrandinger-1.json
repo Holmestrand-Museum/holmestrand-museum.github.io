@@ -1,0 +1,73 @@
+{
+  "title": "Kjente holmestrandinger 1",
+  "intro": "Malere, komponister, diktere og krigshelter — byen under fjellet har fostret flere store navn. Hvor godt kjenner du dem?",
+  "image": "bilde-314",
+  "questions": [
+    {
+      "question": "I hvilken by ble maleren Harriet Backer født i 1845?",
+      "image": "bilde-314",
+      "answers": ["Holmestrand", "Bergen", "Kristiania"],
+      "correct": 0,
+      "fact": "Harriet Backer (1845–1932) ble født i Holmestrand og regnes som en av Norges fremste malere — en pioner i bruken av farge og lys i interiørmaleriet."
+    },
+    {
+      "question": "Harriets yngre søster Agathe Backer Grøndahl ble internasjonalt kjent. Som hva?",
+      "image": "bilde-039",
+      "answers": ["Pianist og komponist", "Skuespiller", "Billedhugger"],
+      "correct": 0,
+      "fact": "Agathe Backer Grøndahl (1847–1907) skrev over 400 verk. George Bernard Shaw omtalte henne som «en av Europas største pianister»."
+    },
+    {
+      "question": "Hva livnærte den velstående familien Backer seg av?",
+      "answers": ["Skipsrederi og handel", "Gårdsbruk", "Fiske"],
+      "correct": 0,
+      "fact": "Faren, konsul Nils Backer, drev handelshuset Chr. Backer & Søn som skipsreder og handelsmann. Backer-slekten kom til Holmestrand fra Nederland omkring 1650."
+    },
+    {
+      "question": "Hvor dro Harriet Backer for å studere maleri på 1870-tallet?",
+      "answers": ["München og Paris", "London og Roma", "Stockholm og Berlin"],
+      "correct": 0,
+      "fact": "Harriet studerte fire år i München fra 1874 og deretter ti år i Paris, der hun fikk anerkjennelse på Parisersalongen."
+    },
+    {
+      "question": "Hvem dirigerte Agathe Backer Grøndahls debutkonsert i Christiania i 1868?",
+      "answers": ["Edvard Grieg", "Halfdan Kjerulf", "Ole Bull"],
+      "correct": 0,
+      "fact": "Debuten ble ledet av Edvard Grieg. De to ble nære venner, og Grieg ønsket at nettopp hun skulle fremføre klaverkonserten hans i a-moll i Bergen i 1898."
+    },
+    {
+      "question": "I 1902 skrev Agathe Backer Grøndahl musikken til kantaten «Nytaarsgry». Hva handlet den om?",
+      "answers": ["Kvinnenes frigjøring", "Sjøfolkenes kår", "Byens jubileum"],
+      "correct": 0,
+      "fact": "«Nytaarsgry», med tekst av Gina Krog, var en hyllest til kvinnesakspioneren Aasta Hansteen og ble fremført under det nordiske kvinnesaksmøtet i Kristiania."
+    },
+    {
+      "question": "Dikteren Nils Kjær, født i Holmestrand i 1870, er mest kjent som...?",
+      "image": "bilde-359",
+      "answers": ["Forfatter og essayist", "Komponist", "Sjøkaptein"],
+      "correct": 0,
+      "fact": "Nils Kjær (1870–1924) ble en av landets fremste essayister. Forholdet til hjembyen var anstrengt — han følte seg oversett av Holmestrand mens han levde."
+    },
+    {
+      "question": "Operasangeren Gunnar Graarud gjorde seg særlig bemerket i verkene til hvilken komponist?",
+      "image": "bilde-354",
+      "answers": ["Richard Wagner", "Edvard Grieg", "W. A. Mozart"],
+      "correct": 0,
+      "fact": "Graarud var en av hovedkreftene ved Wagner-festspillene i Bayreuth 1927–31, feiret for roller som Tristan og Parsifal. Han er gravlagt i Holmestrand."
+    },
+    {
+      "question": "Hvor hadde Gunnar Graarud hovedtyngden av operakarrieren sin?",
+      "image": "bilde-352",
+      "answers": ["Tyskland og Østerrike", "USA", "Italia"],
+      "correct": 0,
+      "fact": "Graarud sang ved scener i blant annet Berlin, Hamburg og Wien, og ble utnevnt til østerriksk kammersanger i 1936."
+    },
+    {
+      "question": "Apotekersønnen Christian Fredrik Jean-Hansen fra Torvet falt i 1943. Hvor?",
+      "image": "jean-hansen/hero.webp",
+      "answers": ["Over Normandie i Frankrike", "Over Nordsjøen", "I Nord-Afrika"],
+      "correct": 0,
+      "fact": "Jean-Hansen bygde opp den norske flyskolen ved «Little Norway» i Canada, søkte seg så til fronten og styrtet på et fototokt nær Évreux i Normandie, 32 år gammel."
+    }
+  ]
+}

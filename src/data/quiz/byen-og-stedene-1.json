@@ -1,0 +1,70 @@
+{
+  "title": "Byen og stedene 1",
+  "intro": "Fjellet, kinoen, sikksakkveien og rekka av ordførere. Bli med på en vandring gjennom Holmestrands steder og selvstyre.",
+  "image": "bilde-364",
+  "questions": [
+    {
+      "question": "Holmestrand kalles ofte «byen under fjellet». Hvorfor?",
+      "answers": ["Et bratt fjell reiser seg rett bak byen", "Byen ligger høyt oppe på et fjell", "Et fjell deler byen i to"],
+      "correct": 0,
+      "fact": "Det bratte Holmestrandfjellet reiser seg like bak bykjernen og gir byen kallenavnet «byen under fjellet»."
+    },
+    {
+      "question": "Hvem regnes som grunnleggeren av Holmestrand Museum?",
+      "answers": ["Dr. Gunnar Graarud", "Nils Kjær", "Martin Onsager"],
+      "correct": 0,
+      "fact": "Legen og lokalhistorikeren dr. Gunnar Graarud tok i 1924 til orde for et museum. Han døde i 1932 før drømmen ble realisert, men testamenterte penger til formålet."
+    },
+    {
+      "question": "Museet holder til i et bygg fra 1756. Hva ble bygget brukt til rett før museet flyttet inn?",
+      "answers": ["Skole for døve", "Rådhus", "Sykehus"],
+      "correct": 0,
+      "fact": "Bygningen huset først borgerskole og middelskole, og fra 1899 Holmestrand offentlige skole for døve, helt til den flyttet til Nedre Gausen i 1932."
+    },
+    {
+      "question": "I hvilket år ble Holmestrand Museums samlinger åpnet for publikum?",
+      "answers": ["1935", "1885", "1975"],
+      "correct": 0,
+      "fact": "Etter oppussing av det gamle bygget ble museets samlinger satt opp i museumssalen i 1935."
+    },
+    {
+      "question": "Bioramabygget fra 1915 huset byens første hva?",
+      "image": "bilde-175",
+      "answers": ["Kino", "Kirke", "Jernbanestasjon"],
+      "correct": 0,
+      "fact": "Det gamle Bioramabygget fra 1915 hadde byens første kino i overetasjen. For 50 øre kunne man se «Filmavisen» hver torsdag."
+    },
+    {
+      "question": "Bioramabygget er et sjeldent eksempel på hvilken byggestil i området?",
+      "answers": ["Jugendstil", "Funkis", "Barokk"],
+      "correct": 0,
+      "fact": "Bygningen har klare jugendtrekk og er, sammen med Nedre Gausen, det eneste eksemplet på jugendstil i Hof, Holmestrand og Sande."
+    },
+    {
+      "question": "På 1880-tallet bygde byens folk en «Ziksakvei» opp fjellsiden. Hva var hensikten?",
+      "image": "bilde-078",
+      "answers": ["En spaservei for badegjestene", "En vei for hest og kjerre", "En vannledning"],
+      "correct": 0,
+      "fact": "Apoteker Martin Onsager sto bak oppropet i 1884 om en sikksakk-formet spaservei opp lia — til glede for byens innbyggere og gjestene ved Holmestrand Bad."
+    },
+    {
+      "question": "Utsiktspunktet «Montebello» på fjellet ble stengt i 1908. Hvor høyt stuper fjellet der?",
+      "answers": ["78 meter", "300 meter", "12 meter"],
+      "correct": 0,
+      "fact": "Montebello lå ved et loddrett stup på 78 meter over Holmestrandfjorden. Eieren stengte det med piggtråd i 1908 etter at besøkende ikke oppførte seg som de skulle."
+    },
+    {
+      "question": "Fra hvilket år har Holmestrand hatt egne ordførere?",
+      "image": "bilde-351",
+      "answers": ["1837", "1905", "1756"],
+      "correct": 0,
+      "fact": "Holmestrand har hatt ordførere siden formannskapslovene innførte lokalt selvstyre i 1837. Byens aller første ordfører var kjøpmann og skipsreder Christen Backer."
+    },
+    {
+      "question": "Holmestrand er slått sammen med tre nabokommuner. Hvilken kom sist, i 2020?",
+      "answers": ["Sande", "Botne", "Hof"],
+      "correct": 0,
+      "fact": "Holmestrand ble slått sammen med Botne (1964), Hof (2018) og til slutt Sande (2020)."
+    }
+  ]
+}

@@ -6,7 +6,8 @@ import { CATEGORIES, FRONT_CATEGORIES, categorySlug, categoryLabel } from '../..
 import { firstImage } from '../../lib/posts';
 
 export async function getStaticPaths() {
-  const all = new Set([...CATEGORIES, ...FRONT_CATEGORIES]);
+  // «Quiz» har egen seksjon (/quiz/) og skal ikke ha en tom kategoriside.
+  const all = new Set([...CATEGORIES, ...FRONT_CATEGORIES].filter((c) => c !== 'Quiz'));
   return [...all].map((cat) => ({
     params: { category: categorySlug(cat) },
     props: { name: cat },

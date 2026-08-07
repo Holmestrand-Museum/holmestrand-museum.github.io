@@ -1,0 +1,71 @@
+{
+  "title": "Handel og industri 1",
+  "intro": "Boksmelk til verdens hav, kjøttdeig på hjørnet og byens siste båtbygger. Slik tjente Holmestrand til livets opphold.",
+  "image": "bilde-365",
+  "questions": [
+    {
+      "question": "De norske Melkefabrikker i Botne ble kjent for å produsere hva?",
+      "image": "bilde-365",
+      "answers": ["Sterilisert og kondensert melk på boks", "Ost og smør", "Sjokolade"],
+      "correct": 0,
+      "fact": "Fabrikken i Botne produserte sterilisert og kondensert boksmelk, og var i mange år den største leverandøren av usukret melk til den engelske marinen."
+    },
+    {
+      "question": "Melkefabrikken vant en stor gullmedalje på en utstilling i 1903. I hvilken by?",
+      "answers": ["Hamburg", "London", "Paris"],
+      "correct": 0,
+      "fact": "På melkeutstillingen i Hamburg i 1903 vant fabrikken senatets store gullmedalje — den høyeste utmerkelsen for slike produkter på den tiden."
+    },
+    {
+      "question": "Hvilket internasjonalt selskap kjøpte melkefabrikken i 1912?",
+      "answers": ["Nestlé", "Freia", "Mills"],
+      "correct": 0,
+      "fact": "I 1912 ble fabrikken solgt til Nestlé (Swiss Condensed Milk Co.), og fikk i 1915 navnet De norske Melkefabrikker."
+    },
+    {
+      "question": "Hva var timelønnen for en mannlig arbeider ved Melkefabrikken i 1914?",
+      "answers": ["43 øre", "5 kroner", "2 øre"],
+      "correct": 0,
+      "fact": "I 1914 tjente en mann 43 øre timen ved fabrikken, mens en kvinne fikk 25 øre. Det var likevel godt betalt sammenlignet med annen industri i samtiden."
+    },
+    {
+      "question": "«Albert på hjørnet» var en institusjon i byen. Hva solgte forretningen?",
+      "image": "bilde-065",
+      "answers": ["Kjøtt og kjøttdeig", "Fisk", "Blomster"],
+      "correct": 0,
+      "fact": "Arvesens slakterforretning på hjørnet av Torget og Langgaten malte kjøttdeigen mens kunden så på."
+    },
+    {
+      "question": "Bygget der Arvesens slakterforretning holdt til, står i dag som noe annet. Hva?",
+      "answers": ["Holmestrand bibliotek", "Rådhuset", "Et hotell"],
+      "correct": 0,
+      "fact": "Det gamle hjørnebygget på Torget brant, og på tomta ligger i dag Holmestrand bibliotek."
+    },
+    {
+      "question": "Isak Grimsland (1908–2001) omtales som byens siste hva?",
+      "image": "bilde-222",
+      "answers": ["Båtbygger", "Baker", "Urmaker"],
+      "correct": 0,
+      "fact": "Isak Grimsland var Holmestrands siste båtbygger. Fra 1960 spesialiserte han seg på 15 fots passbåter av furu på eik, som tok cirka en måned å bygge."
+    },
+    {
+      "question": "Hvor kom båtbyggeren Isak Grimsland opprinnelig fra?",
+      "answers": ["Risør", "Larvik", "Bergen"],
+      "correct": 0,
+      "fact": "Isak ble født i Risør i 1908. Familien flyttet til Holmestrand i 1912, og han livnærte seg først til sjøs før han ble båtbygger."
+    },
+    {
+      "question": "Hvordan oppsto «Karl Hansens legat for verdige trengende» i 1909?",
+      "image": "bilde-079",
+      "answers": ["Fra fire stjålne kroner", "Fra en stor arv", "Fra en basar"],
+      "correct": 0,
+      "fact": "Banksjef Svendsen og dr. Birch nappet for moro skyld hver sin tokrone fra en fiskehandler. Da de ble avslørt, ble de fire kronene grunnfondet i et legat."
+    },
+    {
+      "question": "Hvor lenge skulle kapitalen i «Karl Hansens legat» stå urørt?",
+      "answers": ["I 100 år", "I 10 år", "For alltid"],
+      "correct": 0,
+      "fact": "Kapitalen skulle stå urørt i 100 år. I 2009 ble den låst i nye 100 år og ansvaret overført til Holmestrand Museumsforening."
+    }
+  ]
+}

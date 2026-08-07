@@ -37,6 +37,7 @@ const heroBg = showHero ? await getImage({ src: heroImage, width: 1600 }) : null
 					{CATEGORIES.map((cat) => (
 						<li><a href={`/kategori/${categorySlug(cat)}/`}>{categoryLabel(cat)}</a></li>
 					))}
+					<li><a href="/quiz/">Quiz</a></li>
 					<li><a href="/om-oss/">Om oss</a></li>
 				</ul>
 			</nav>

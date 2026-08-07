@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Quiz from '../../components/Quiz.astro';
+import type { QuizData } from '../../lib/quiz';
+
+export async function getStaticPaths() {
+  const mods = import.meta.glob<QuizData>('../../data/quiz/*.json', { eager: true });
+  return Object.entries(mods).map(([path, mod]) => {
+    const data = (mod as { default?: QuizData }).default ?? (mod as QuizData);
+    const slug = path.split('/').pop()!.replace(/\.json$/, '');
+    return { params: { slug }, props: { quiz: data } };
+  });
+}
+
+const { quiz } = Astro.props as { quiz: QuizData };
+const { slug } = Astro.params;
+---
+
+<Layout title={`${quiz.title} – Holmestrand Museum`}>
+	<div class="container quiz-page">
+		<p class="quiz-back"><a href="/quiz/">← Alle quizer</a></p>
+		<Quiz quiz={quiz} slug={slug!} />
+	</div>
+</Layout>
+
+<style>
+	.quiz-page {
+		max-width: 720px;
+	}
+	.quiz-back {
+		max-width: 640px;
+		margin: 0 auto 1.25rem;
+		font-size: 0.9rem;
+	}
+	.quiz-back a {
+		text-decoration: none;
+	}
+</style>

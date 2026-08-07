@@ -17,11 +17,16 @@ const FRONT_CATEGORY_IMAGES: Record<string, string> = {
   Bilder: '/images/bilde-196.webp',
 };
 
+// Quiz har egen seksjon (/quiz/), ikke en kategoriside.
+const FRONT_CATEGORY_HREFS: Record<string, string> = {
+  Quiz: '/quiz/',
+};
+
 const categoryTiles = FRONT_CATEGORIES.map((cat) => {
   const post = allPosts.find((p) => p.data.categories.includes(cat) && firstImage(p.body));
   return {
     name: categoryLabel(cat),
-    href: `/kategori/${categorySlug(cat)}/`,
+    href: FRONT_CATEGORY_HREFS[cat] ?? `/kategori/${categorySlug(cat)}/`,
     image: FRONT_CATEGORY_IMAGES[cat] ?? (post ? firstImage(post.body) : null),
   };
 });

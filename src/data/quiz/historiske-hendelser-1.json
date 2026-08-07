@@ -1,0 +1,71 @@
+{
+  "title": "Historiske hendelser 1",
+  "intro": "Vådeskudd, bybrann, storm på fjorden og kongelig besøk. Byens historie har hatt sine store øyeblikk — kjenner du dem igjen?",
+  "image": "tordenskiold-web/hero.webp",
+  "questions": [
+    {
+      "question": "Hva skjedde da den unge Peter Wessel saluterte utenfor Holmestrand 13. november 1713?",
+      "image": "tordenskiold-web/hero.webp",
+      "answers": ["Et vådeskudd drepte en tjenestepike", "Byen ble beleiret", "Skipet hans forliste"],
+      "correct": 0,
+      "fact": "Et glemt, skarpladd kanonskudd i æressalutten drepte tjenestepiken Marte Albretsdatter. Retten konkluderte med et ulykkelig vådeskudd."
+    },
+    {
+      "question": "Hvilket navn fikk Peter Wessel da han ble adlet i 1716?",
+      "image": "tordenskiold-web/portrett.webp",
+      "answers": ["Tordenskjold", "Gyldenløve", "Huitfeldt"],
+      "correct": 0,
+      "fact": "Etter den storslagne seieren over svenskene ved Dynekilen ble Peter Wessel adlet i 1716 under navnet Tordenskjold."
+    },
+    {
+      "question": "Hvor gammel var tjenestepiken Marte Albretsdatter da hun ble drept av vådeskuddet?",
+      "answers": ["Rundt 19 år", "Rundt 45 år", "Rundt 8 år"],
+      "correct": 0,
+      "fact": "Etter alt å dømme var Marte bare 19 år den novemberkvelden hun mistet livet på trappesvalen. Wessel lovet å betale begravelsen, men gjorde det aldri."
+    },
+    {
+      "question": "Natt til 12. oktober 1884 rammet en katastrofe Holmestrand. Hva var det?",
+      "answers": ["En stor bybrann", "En storflom", "Et jordskjelv"],
+      "correct": 0,
+      "fact": "Bybrannen natt til 12. oktober 1884 la nesten halve byen i aske. Det som begynte som en liten brann en stormfull natt, vokste til et inferno."
+    },
+    {
+      "question": "Omtrent hvor mange bygninger ble ødelagt i bybrannen i 1884?",
+      "answers": ["Rundt 66", "Rundt 12", "Rundt 200"],
+      "correct": 0,
+      "fact": "Rundt 66 bygninger ble fortært av flammene, og nærmere halve byen ble lagt i ruiner."
+    },
+    {
+      "question": "Sommeren 1866 opplevde søstrene Backer et illevarslende uvær. Hva var de i ferd med å gjøre?",
+      "image": "bilde-138",
+      "answers": ["Ro hjem fra Falkensten i en liten båt", "Krysse fjellet til fots", "Reise med tog"],
+      "correct": 0,
+      "fact": "Agathe og Harriet Backer var på vei hjem fra Falkensten i en liten båt med familien da stormen kom."
+    },
+    {
+      "question": "Hvor gikk søstrene Backer i land for å slippe unna stormen i 1866?",
+      "answers": ["Snekkestad", "Falkensten", "Horten"],
+      "correct": 0,
+      "fact": "De la til ved et gammelt båthus ved Snekkestad og spaserte resten av veien hjem til Holmestrand."
+    },
+    {
+      "question": "I 1892 protesterte en ungdomsforening mot den labre 17. mai-feiringen. Hvordan?",
+      "answers": ["De holdt en «begravelse» av 17. mai", "De avlyste all feiring i ti år", "De marsjerte til Kristiania"],
+      "correct": 0,
+      "fact": "Ungdomsforeningen erklærte den nasjonale frihetsfølelsen for død og gikk i sørgetog med svart fane. Oppstyret ble omtalt i aviser verden over — til og med i Amerika."
+    },
+    {
+      "question": "Hvem kom på offisielt besøk med kongeskipet «Norge» i september 2018?",
+      "image": "bilde-254",
+      "answers": ["Kronprinsparet", "Kong Harald og dronning Sonja", "Statsministeren"],
+      "correct": 0,
+      "fact": "Kronprins Haakon og kronprinsesse Mette-Marit besøkte byen under fylkesturen til Vestfold."
+    },
+    {
+      "question": "Både kronprinsparet og ordføreren prøvde seg — og tapte — i en Holmestrand-idrett i 2018. Hvilken?",
+      "answers": ["Petanque", "Bowling", "Curling"],
+      "correct": 0,
+      "fact": "De kongelige og ordfører Svele måtte alle se seg slått av ivrige juniorspillere i petanque, en av byens største idretter."
+    }
+  ]
+}

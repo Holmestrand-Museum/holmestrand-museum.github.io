@@ -1,0 +1,260 @@
+---
+import { resolveImage } from '../lib/posts';
+import type { QuizData } from '../lib/quiz';
+
+interface Props {
+  quiz: QuizData;
+  slug: string;
+}
+
+const { quiz, slug } = Astro.props;
+
+// resolveImage() bruker node:fs og kan bare kjøres her (build-tid), ikke i klient-JS.
+// Derfor løser vi alle bildestier nå og sender ferdige URL-er inn i øya.
+function img(v?: string): string | null {
+  if (!v) return null;
+  return resolveImage(v);
+}
+
+const data = {
+  slug,
+  title: quiz.title,
+  image: img(quiz.image),
+  intro: quiz.intro ?? '',
+  ranks: quiz.ranks ?? null,
+  questions: quiz.questions.map((q) => ({
+    question: q.question,
+    image: img(q.image),
+    answers: q.answers,
+    correct: q.correct,
+    fact: (q.fact ?? '').trim(),
+  })),
+};
+---
+
+<div class="quiz" data-quiz-root></div>
+<noscript>
+  <p class="quiz-noscript">Denne quizen krever JavaScript. Slå det på for å spille.</p>
+</noscript>
+
+<script is:inline define:vars={{ data }}>
+  const root = document.querySelector('[data-quiz-root]');
+  if (root) {
+    const total = data.questions.length;
+
+    const DEFAULT_RANKS = [
+      { min: 100, title: 'Ekte Holmestrand-kjenner' },
+      { min: 75, title: 'Godt kjent i byen' },
+      { min: 50, title: 'På god vei' },
+      { min: 25, title: 'Tilreisende' },
+      { min: 0, title: 'Fersk i byen' },
+    ];
+    const ranks = (data.ranks && data.ranks.length ? data.ranks : DEFAULT_RANKS)
+      .slice()
+      .sort((a, b) => b.min - a.min);
+
+    function rankFor(pct) {
+      const r = ranks.find((r) => pct >= r.min);
+      return r ? r.title : ranks[ranks.length - 1].title;
+    }
+
+    const storeKey = 'quiz-best-' + data.slug;
+    function bestScore() {
+      const v = parseInt(localStorage.getItem(storeKey) || '', 10);
+      return Number.isFinite(v) ? v : null;
+    }
+    function saveBest(score) {
+      const prev = bestScore();
+      if (prev === null || score > prev) localStorage.setItem(storeKey, String(score));
+    }
+
+    let index = 0;
+    let score = 0;
+
+    function el(tag, cls, text) {
+      const n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function clear() {
+      root.innerHTML = '';
+    }
+
+    // ---- Startskjerm ----
+    function renderStart() {
+      clear();
+      const card = el('div', 'quiz-card quiz-start');
+      if (data.image) {
+        const banner = el('div', 'quiz-banner');
+        banner.style.backgroundImage = 'url(' + data.image + ')';
+        card.appendChild(banner);
+      }
+      const body = el('div', 'quiz-card-body');
+      body.appendChild(el('h1', 'quiz-title', data.title));
+      if (data.intro) body.appendChild(el('p', 'quiz-intro', data.intro));
+      body.appendChild(el('p', 'quiz-meta', total + (total === 1 ? ' spørsmål' : ' spørsmål')));
+      const best = bestScore();
+      if (best !== null) {
+        body.appendChild(el('p', 'quiz-best', 'Din beste: ' + best + ' av ' + total));
+      }
+      const start = el('button', 'quiz-btn quiz-btn-primary', 'Start quizen');
+      start.type = 'button';
+      start.addEventListener('click', () => {
+        index = 0;
+        score = 0;
+        renderQuestion();
+      });
+      body.appendChild(start);
+      card.appendChild(body);
+      root.appendChild(card);
+      start.focus();
+    }
+
+    // ---- Spørsmål ----
+    function renderQuestion() {
+      clear();
+      const q = data.questions[index];
+      const card = el('div', 'quiz-card quiz-question');
+
+      // Fremdrift
+      const prog = el('div', 'quiz-progress');
+      const bar = el('div', 'quiz-progress-track');
+      const fill = el('div', 'quiz-progress-fill');
+      fill.style.width = (index / total) * 100 + '%';
+      bar.appendChild(fill);
+      prog.appendChild(el('span', 'quiz-progress-label', 'Spørsmål ' + (index + 1) + ' av ' + total));
+      prog.appendChild(bar);
+      card.appendChild(prog);
+
+      const body = el('div', 'quiz-card-body');
+      if (q.image) {
+        const im = el('img', 'quiz-image');
+        im.src = q.image;
+        im.alt = '';
+        im.loading = 'lazy';
+        body.appendChild(im);
+      }
+      body.appendChild(el('h2', 'quiz-q', q.question));
+
+      const list = el('div', 'quiz-answers');
+      const buttons = [];
+      let locked = false;
+
+      // Stokk svarrekkefølgen så «riktig» ikke alltid ligger først (Fisher–Yates).
+      const order = q.answers.map((_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      order.forEach((ansIdx, pos) => {
+        const b = el('button', 'quiz-answer');
+        b.type = 'button';
+        b.appendChild(el('span', 'quiz-answer-num', String(pos + 1)));
+        b.appendChild(el('span', 'quiz-answer-text', q.answers[ansIdx]));
+        b.addEventListener('click', () => choose(ansIdx));
+        buttons.push({ btn: b, ansIdx });
+        list.appendChild(b);
+      });
+      body.appendChild(list);
+
+      const feedback = el('div', 'quiz-feedback');
+      feedback.setAttribute('role', 'status');
+      feedback.setAttribute('aria-live', 'polite');
+      body.appendChild(feedback);
+
+      card.appendChild(body);
+      root.appendChild(card);
+
+      function choose(pick) {
+        if (locked) return;
+        locked = true;
+        const correct = q.correct;
+        if (pick === correct) score++;
+        buttons.forEach(({ btn, ansIdx }) => {
+          btn.disabled = true;
+          if (ansIdx === correct) btn.classList.add('is-correct');
+          else if (ansIdx === pick) btn.classList.add('is-wrong');
+        });
+
+        const verdict = el(
+          'p',
+          'quiz-verdict ' + (pick === correct ? 'is-correct' : 'is-wrong'),
+          pick === correct ? 'Riktig!' : 'Feil'
+        );
+        feedback.appendChild(verdict);
+        if (q.fact) feedback.appendChild(el('p', 'quiz-fact', q.fact));
+
+        const next = el(
+          'button',
+          'quiz-btn quiz-btn-primary',
+          index + 1 < total ? 'Neste spørsmål' : 'Se resultatet'
+        );
+        next.type = 'button';
+        next.addEventListener('click', () => {
+          index++;
+          if (index < total) renderQuestion();
+          else renderResult();
+        });
+        feedback.appendChild(next);
+        next.focus();
+      }
+
+      // Tastatur: 1–9 velger svar
+      function onKey(e) {
+        if (locked) return;
+        const n = parseInt(e.key, 10);
+        if (Number.isFinite(n) && n >= 1 && n <= buttons.length) {
+          buttons[n - 1].btn.click();
+        }
+      }
+      document.addEventListener('keydown', onKey);
+      // Rydd opp lytteren når kortet forlates
+      card.dataset.cleanup = '1';
+      const observer = new MutationObserver(() => {
+        if (!document.body.contains(card)) {
+          document.removeEventListener('keydown', onKey);
+          observer.disconnect();
+        }
+      });
+      observer.observe(root, { childList: true });
+    }
+
+    // ---- Resultat ----
+    function renderResult() {
+      clear();
+      saveBest(score);
+      const pct = total ? Math.round((score / total) * 100) : 0;
+      const card = el('div', 'quiz-card quiz-result');
+      const body = el('div', 'quiz-card-body');
+      body.appendChild(el('p', 'quiz-rank', rankFor(pct)));
+      body.appendChild(el('p', 'quiz-score', score + ' av ' + total + ' riktige'));
+
+      const best = bestScore();
+      if (best !== null && best !== score) {
+        body.appendChild(el('p', 'quiz-best', 'Din beste: ' + best + ' av ' + total));
+      }
+
+      const retry = el('button', 'quiz-btn quiz-btn-primary', 'Prøv igjen');
+      retry.type = 'button';
+      retry.addEventListener('click', () => {
+        index = 0;
+        score = 0;
+        renderQuestion();
+      });
+      body.appendChild(retry);
+
+      const all = el('a', 'quiz-btn quiz-btn-ghost', 'Alle quizer');
+      all.href = '/quiz/';
+      body.appendChild(all);
+
+      card.appendChild(body);
+      root.appendChild(card);
+      retry.focus();
+    }
+
+    renderStart();
+  }
+</script>
+

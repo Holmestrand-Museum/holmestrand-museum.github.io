@@ -1,0 +1,70 @@
+{
+  "title": "Krig og forsvar 1",
+  "intro": "Kanoner på Gausetangen og handelsskip på minelagte hav. Byen har møtt både Napoleonskrigene og verdenskrigenes farer. Er du klar?",
+  "image": "bilde-211",
+  "questions": [
+    {
+      "question": "Holmestrand Batteri på Gausetangen ble bygd i 1808. Hvilken storkrig var bakteppet?",
+      "image": "bilde-211",
+      "answers": ["Napoleonskrigene", "Første verdenskrig", "Den store nordiske krig"],
+      "correct": 0,
+      "fact": "Under Napoleonskrigene (1803–1815) fryktet man engelske angrep på trelasthavnen Holmestrand, og byens borgere reiste selv et kanonbatteri på Gausetangen i 1808."
+    },
+    {
+      "question": "Hva var Holmestrand Batteri i hovedsak bygd av?",
+      "answers": ["Planker fylt med jord og stein", "Støpt betong", "Hugget gråstein"],
+      "correct": 0,
+      "fact": "Batteriet var relativt primitivt — en forskaling av planker fylt opp med jord og stein. Kildene viser at det fantes i 1815, men siden forsvant sporene helt."
+    },
+    {
+      "question": "Hvor mange store 8-punds kanoner var Holmestrand Batteri utstyrt med?",
+      "answers": ["Tre", "Tolv", "Én"],
+      "correct": 0,
+      "fact": "Kongen eide de tre store 8-punds kanonene, mens byens borgere selv eide de mindre — to 3-punds og fire 1-punds kanoner."
+    },
+    {
+      "question": "Fra hvilken festning ble de store kanonene levert i 1808?",
+      "answers": ["Akershus", "København", "Bergenhus"],
+      "correct": 0,
+      "fact": "De tre 8-punds kanonene kom fra Akershus i april 1808. Hver kanon veide rundt 1200 kg og hadde en rekkevidde på cirka 700 meter."
+    },
+    {
+      "question": "Kanonkulene kunne varmes opp til de ble rødglødende. Hvorfor?",
+      "answers": ["For å antenne fiendens treskip", "For å trenge lettere gjennom skutesiden", "For å skremme fienden med lyset"],
+      "correct": 0,
+      "fact": "Glødende kuler kunne sette fyr på treskipene de traff — men det var farlig også for mannskapet, siden de kunne antenne kruttet for tidlig."
+    },
+    {
+      "question": "Hvem ledet «Holmestrand Borgerbevæpning» på begynnelsen av 1800-tallet?",
+      "answers": ["Jan Backer", "Christen Backer", "Martin Onsager"],
+      "correct": 0,
+      "fact": "Borgerbevæpningen ble ledet av Jan Backer, bror av Christen Backer. Troppen bar ikke uniform og var bevæpnet med 21 geværer og 30 spyd."
+    },
+    {
+      "question": "Norge var nøytralt under første verdenskrig. Hva ble likevel skjebnen til rundt halvparten av handelsflåten?",
+      "image": "bilde-215",
+      "answers": ["Rundt 50 % ble senket", "Den ble solgt til utlandet", "Den lå i opplag"],
+      "correct": 0,
+      "fact": "Hele 50 % av den norske handelsflåten gikk tapt — det største prosentvise tapet av noen handelsflåte under krigen."
+    },
+    {
+      "question": "Hva var den vanligste årsaken til at Holmestrand-skip gikk tapt under første verdenskrig?",
+      "image": "bilde-131",
+      "answers": ["Tyske ubåter", "Kraftig uvær", "Motorhavari"],
+      "correct": 0,
+      "fact": "Skip etter skip ble stanset og sprengt eller torpedert av tyske ubåter i farvannene rundt De britiske øyer."
+    },
+    {
+      "question": "Omtrent hvor mange norske sjøfolk omkom i handelsflåten under første verdenskrig?",
+      "answers": ["Rundt 1500", "Rundt 150", "Rundt 15 000"],
+      "correct": 0,
+      "fact": "Rundt 1500 norske sjøfolk omkom, og i alt 647 handelsskip ble torpedert eller minesprengt."
+    },
+    {
+      "question": "D/S Asta hadde en spesiell plass i Holmestrands krigshistorie. Hvorfor?",
+      "answers": ["Det var byens eneste dampskip som ble sprengt", "Det var byens største skip", "Det var det første skipet bygd i byen"],
+      "correct": 0,
+      "fact": "D/S Asta var det eneste dampskipet fra Holmestrand som ble sprengt — stanset og senket av den tyske ubåten UB 37 i mai 1917."
+    }
+  ]
+}
