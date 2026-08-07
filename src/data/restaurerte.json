@@ -1,53 +1,159 @@
 [
   {
-    "orig": "carl_trau_garden_1882.webp",
-    "rest": "carl_trau_garden_1882R.webp",
-    "title": "Carl Trau Gården",
-    "year": "1882",
-    "photographer": "",
-    "description": "Gården lå på torget omtrent der Dr. Graaruds Plass ligger i dag. Bygget overlevde brannen i 1884, men ble kjøpt av kommunen og revet."
+    "added": 1,
+    "orig": "brooklyn_bridge_holmestrand_1955_foto_rolf_syvertsen.jpg",
+    "rest": "brooklyn_bridge_holmestrand_1955_foto_rolf_syvertsenR.webp",
+    "title": "Brooklyn Bridge, Holmestrand",
+    "year": "1955",
+    "photographer": "Rolf Syvertsen",
+    "description": ""
   },
   {
-    "orig": "dahls_hotell_langgaten_1882.webp",
-    "rest": "dahls_hotell_langgaten_1882R.webp",
-    "title": "Dahls Hotell Langgaten",
-    "year": "1882",
+    "added": 1,
+    "orig": "Vognmann_Borge_1950.jpg",
+    "rest": "Vognmann_Borge_1950R.webp",
+    "title": "Vognmann Borge",
+    "year": "1950",
     "photographer": "",
     "description": ""
   },
   {
-    "orig": "rundt_torget_dagen_etter_bybrannen_1884.webp",
-    "rest": "rundt_torget_dagen_etter_bybrannen_1884R.webp",
-    "title": "Rundt Torget Dagen Etter Bybrannen",
+    "added": 1,
+    "orig": "isen_har_lagt_seg_i_havnen_1948.jpg",
+    "rest": "isen_har_lagt_seg_i_havnen_1948R.webp",
+    "title": "Isen har lagt seg i havnen",
+    "year": "1948",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "17maitoget_1945.jpg",
+    "rest": "17maitoget_1945R.webp",
+    "title": "17. mai-toget",
+    "year": "1945",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "hjemmefronten_holder_vakt_ved_politistasjonen_1945.jpg",
+    "rest": "hjemmefronten_holder_vakt_ved_politistasjonen_1945R.webp",
+    "title": "Hjemmefronten holder vakt ved politistasjonen",
+    "year": "1945",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "krigshelten_Fredrik_Jean_Hansen_i_treningsflyet_skutt_ned_oog_drept_over_frankrike_i_1943.jpg",
+    "rest": "krigshelten_Fredrik_Jean_Hansen_i_treningsflyet_skutt_ned_oog_drept_over_frankrike_i_1943R.webp",
+    "title": "Krigshelten Fredrik Jean Hansen i treningsflyet, skutt ned og drept over Frankrike",
+    "year": "1943",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "Tyske_soldater_foran_sociteten_1941_foto_doktor_helle.jpg",
+    "rest": "Tyske_soldater_foran_sociteten_1941_foto_doktor_helleR.webp",
+    "title": "Tyske soldater foran Societeten",
+    "year": "1941",
+    "photographer": "Doktor Helle",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "Schous_konditori_1940.jpg",
+    "rest": "Schous_konditori_1940R.webp",
+    "title": "Schous konditori",
+    "year": "1940",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "slakter_Frelumstad_1920.jpg",
+    "rest": "slakter_Frelumstad_1920R.webp",
+    "title": "Slakter Frelumstad",
+    "year": "1920",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "badeparken_1900.jpg",
+    "rest": "badeparken_1900R.webp",
+    "title": "Badeparken",
+    "year": "1900",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "Baker_Otto_Bjerke_1900_foto_louise_wold.jpg",
+    "rest": "Baker_Otto_Bjerke_1900_foto_louise_woldR.webp",
+    "title": "Baker Otto Bjerke",
+    "year": "1900",
+    "photographer": "Louise Wold",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "brygga_1900_foto_louise_wold.jpg",
+    "rest": "brygga_1900_foto_louise_woldR.webp",
+    "title": "Brygga",
+    "year": "1900",
+    "photographer": "Louise Wold",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "holmestrand_dampsag_1900_foto_louise_wold.jpg",
+    "rest": "holmestrand_dampsag_1900_foto_louise_woldR.webp",
+    "title": "Holmestrand Dampsag",
+    "year": "1900",
+    "photographer": "Louise Wold",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "tranberggarden_holstgaarden_1890.jpg",
+    "rest": "tranberggarden_holstgaarden_1890R.webp",
+    "title": "Tranberggården (Holstgården)",
+    "year": "1890",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 1,
+    "orig": "Brygga_1884.jpg",
+    "rest": "Brygga_1884R.webp",
+    "title": "Brygga",
     "year": "1884",
     "photographer": "",
     "description": ""
   },
   {
-    "orig": "nordreklev_louisewold_1885.webp",
-    "rest": "nordreklev_louisewold_1885R.webp",
-    "title": "Nordreklev",
-    "year": "1885",
-    "photographer": "Louise Wold",
-    "description": "Gjester på badehuset på vei oppover til Bellevue."
+    "added": 1,
+    "orig": "baatbyggeriet_i_hagemann_1844.jpg",
+    "rest": "baatbyggeriet_i_hagemann_1844R.webp",
+    "title": "Båtbyggeriet i Hagemann",
+    "year": "1844",
+    "photographer": "",
+    "description": ""
   },
   {
-    "orig": "veien_nordover_1890_louisewold.webp",
-    "rest": "veien_nordover_1890_louisewoldR.webp",
-    "title": "Veien Nordover",
-    "year": "1890",
-    "photographer": "Louise Wold",
-    "description": "Fotografen stod omtrent der badet lå."
+    "added": 0,
+    "orig": "17_mai_1914.webp",
+    "rest": "17_mai_1914R.webp",
+    "title": "17 Mai",
+    "year": "1914",
+    "photographer": "",
+    "description": ""
   },
   {
-    "orig": "holmestrand_1900_louisewold.webp",
-    "rest": "holmestrand_1900_louisewoldR.webp",
-    "title": "Holmestrand",
-    "year": "1900",
-    "photographer": "Louise Wold",
-    "description": "Byen sett fra Bellevue."
-  },
-  {
+    "added": 0,
     "orig": "doveskolen_dagens_museum_1913.webp",
     "rest": "doveskolen_dagens_museum_1913R.webp",
     "title": "Døveskolen Dagens Museum",
@@ -56,10 +162,56 @@
     "description": ""
   },
   {
-    "orig": "17_mai_1914.webp",
-    "rest": "17_mai_1914R.webp",
-    "title": "17 Mai",
-    "year": "1914",
+    "added": 0,
+    "orig": "holmestrand_1900_louisewold.webp",
+    "rest": "holmestrand_1900_louisewoldR.webp",
+    "title": "Holmestrand",
+    "year": "1900",
+    "photographer": "Louise Wold",
+    "description": "Byen sett fra Bellevue."
+  },
+  {
+    "added": 0,
+    "orig": "veien_nordover_1890_louisewold.webp",
+    "rest": "veien_nordover_1890_louisewoldR.webp",
+    "title": "Veien Nordover",
+    "year": "1890",
+    "photographer": "Louise Wold",
+    "description": "Fotografen stod omtrent der badet lå."
+  },
+  {
+    "added": 0,
+    "orig": "nordreklev_louisewold_1885.webp",
+    "rest": "nordreklev_louisewold_1885R.webp",
+    "title": "Nordreklev",
+    "year": "1885",
+    "photographer": "Louise Wold",
+    "description": "Gjester på badehuset på vei oppover til Bellevue."
+  },
+  {
+    "added": 0,
+    "orig": "rundt_torget_dagen_etter_bybrannen_1884.webp",
+    "rest": "rundt_torget_dagen_etter_bybrannen_1884R.webp",
+    "title": "Rundt Torget Dagen Etter Bybrannen",
+    "year": "1884",
+    "photographer": "",
+    "description": ""
+  },
+  {
+    "added": 0,
+    "orig": "carl_trau_garden_1882.webp",
+    "rest": "carl_trau_garden_1882R.webp",
+    "title": "Carl Trau Gården",
+    "year": "1882",
+    "photographer": "",
+    "description": "Gården lå på torget omtrent der Dr. Graaruds Plass ligger i dag. Bygget overlevde brannen i 1884, men ble kjøpt av kommunen og revet."
+  },
+  {
+    "added": 0,
+    "orig": "dahls_hotell_langgaten_1882.webp",
+    "rest": "dahls_hotell_langgaten_1882R.webp",
+    "title": "Dahls Hotell Langgaten",
+    "year": "1882",
     "photographer": "",
     "description": ""
   }

@@ -73,8 +73,17 @@ for (const f of readdirSync(dir).filter(isImg)) {
   }
 }
 
+// Batchnummer: nye par legges i en ny batch (høyere tall) enn alt som finnes fra
+// før, slik at «sist tillagt» alltid havner øverst i slideren. Eksisterende par
+// beholder sitt batchnummer (mangler det, regnes det som batch 0).
+let maxBatch = 0;
+for (const rec of byOrig.values()) {
+  if (typeof rec.added === 'number' && rec.added > maxBatch) maxBatch = rec.added;
+}
+const nextBatch = maxBatch + 1;
+
 const records = [];
-const added = [];
+const newTitles = [];
 const incomplete = [];
 for (const [base, p] of Object.entries(pairs)) {
   if (!p.orig || !p.rest) {
@@ -83,7 +92,7 @@ for (const [base, p] of Object.entries(pairs)) {
   }
   const existing = byOrig.get(p.orig);
   if (existing) {
-    records.push({ ...existing, orig: p.orig, rest: p.rest });
+    records.push({ added: 0, ...existing, orig: p.orig, rest: p.rest });
   } else {
     const m = parse(base);
     records.push({
@@ -93,16 +102,22 @@ for (const [base, p] of Object.entries(pairs)) {
       year: m.year,
       photographer: m.photographer,
       description: '',
+      added: nextBatch,
     });
-    added.push(`${m.title}${m.year ? ` (${m.year})` : ''}`);
+    newTitles.push(`${m.title}${m.year ? ` (${m.year})` : ''}`);
   }
 }
 
-records.sort((a, b) => (a.year || '9999').localeCompare(b.year || '9999') || a.title.localeCompare(b.title, 'nb'));
+// Sortering: nyeste batch øverst, deretter nyeste årstall først innad.
+records.sort((a, b) =>
+  (b.added || 0) - (a.added || 0) ||
+  (b.year || '0000').localeCompare(a.year || '0000') ||
+  a.title.localeCompare(b.title, 'nb')
+);
 
 mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, JSON.stringify(records, null, 2) + '\n', 'utf8');
 
 console.log(`[restaurerte] ${records.length} par skrevet til src/data/restaurerte.json`);
-if (added.length) console.log('  nye par (auto-tittel, tom tekst):\n   - ' + added.join('\n   - '));
+if (newTitles.length) console.log('  nye par (auto-tittel, tom tekst):\n   - ' + newTitles.join('\n   - '));
 if (incomplete.length) console.log('  ADVARSEL – ufullstendige par:\n   - ' + incomplete.join('\n   - '));
