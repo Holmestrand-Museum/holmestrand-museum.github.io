@@ -29,7 +29,7 @@ const MAX_WIDTH = 2200;      // tak på bredde; bredere bilder nedskaleres
 const Q_JPG = 80;            // jpeg-kvalitet
 const Q_WEBP = 82;           // webp-kvalitet (også for PNG->WebP)
 // Toppnivå-mapper i images/ som IKKE skal behandles/serveres (kildemateriale / arbeidsmapper).
-const SKIP_TOP = new Set(['tordenskiold', 'til restaurering']);
+const SKIP_TOP = new Set(['tordenskiold', 'til restaurering', 'Christian Fredrik Jean-Hansen']);
 
 // Tekstfiler der /images/-referanser kan forekomme (for lenkefiks ved PNG->WebP).
 const CONTENT_GLOBS = [join(root, 'content'), join(root, 'src')];

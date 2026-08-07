@@ -11,7 +11,7 @@ const dest = join(root, 'public', 'images');
 
 // Toppnivå-mapper i images/ som er rent kildemateriale og IKKE skal serveres/publiseres.
 // (Web-vennlige versjoner legges i egne mapper, f.eks. images/tordenskiold-web/.)
-const IGNORE_TOP = new Set(['tordenskiold', 'til restaurering']);
+const IGNORE_TOP = new Set(['tordenskiold', 'til restaurering', 'Christian Fredrik Jean-Hansen']);
 
 if (!existsSync(src)) {
   console.log('[sync-images] ingen images/-mappe – hopper over');
