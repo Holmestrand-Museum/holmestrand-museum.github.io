@@ -2,8 +2,8 @@
 title: "Historien i nye farger"
 slug: historien-i-nye-farger
 date: 2026-08-06
-image: restaurerte/hero.png
-hero: restaurerte/hero.png
+image: restaurerte/hero.webp
+hero: restaurerte/hero.webp
 beforeafter: restaurerte
 type: post
 status: publish

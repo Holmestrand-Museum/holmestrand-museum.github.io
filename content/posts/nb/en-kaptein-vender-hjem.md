@@ -22,7 +22,7 @@ Jørgen Lorentzen Wolf Backer ble født i Holmestrand i 1764 som sønn av Lars B
 Etter dåpen i Holmestrand kirke 1. august 1764, forsvinner Jørgen fra de skriftlige kildene frem til 17. juni 1796, da han gifter seg med Susanna Næskil. Susanna var datter av skipsfører Ellef Næskil og Anne Cathrine Blom. Ellef Næskil kom til Holmestrand rundt 1761 som skipsfører med skipet “Anna Elisabeth” og bygget opp en betydelig formue gjennom skipsfart. Han eide blant annet Næskildgården i Holmestrand fra 1762. ​
 
 <figure>
-<img src="/images/bilde-241.png" alt="Kirkebok 1 august 1764" />
+<img src="/images/bilde-241.webp" alt="Kirkebok 1 august 1764" />
 <figcaption>Kirkebok 1 august 1764</figcaption>
 </figure>
 

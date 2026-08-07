@@ -35,47 +35,47 @@ Vi håper du lar deg fange av kontrastene, detaljene og overraskelsene som komme
 
 ## Torget
 
-![Langgaten mot nord.](/images/bilde-121.png)
-![Langgaten mot nord 2025](/images/bilde-258.png)
+![Langgaten mot nord.](/images/bilde-121.webp)
+![Langgaten mot nord 2025](/images/bilde-258.webp)
 
 ## Langgaten mot nord.
 
-![](/images/bilde-152.png)
-![](/images/bilde-147.png)
+![](/images/bilde-152.webp)
+![](/images/bilde-147.webp)
 
 ## Nordre Klev
 
-![](/images/bilde-161.png)
-![](/images/bilde-160.png)
+![](/images/bilde-161.webp)
+![](/images/bilde-160.webp)
 
 ## Nordre Klev
 
-![](/images/bilde-153.png)
-![](/images/bilde-155.png)
+![](/images/bilde-153.webp)
+![](/images/bilde-155.webp)
 
 ## Holmestrand Stasjon
 
-![](/images/bilde-022.png)
-![](/images/bilde-002.png)
+![](/images/bilde-022.webp)
+![](/images/bilde-002.webp)
 
 ## Holmestrand Museum
 
-![](/images/bilde-159.png)
-![](/images/bilde-156.png)
+![](/images/bilde-159.webp)
+![](/images/bilde-156.webp)
 
 ## Hotel Societeten
 
-![](/images/bilde-157.png)
-![](/images/bilde-158.png)
+![](/images/bilde-157.webp)
+![](/images/bilde-158.webp)
 
 ## Holmestrand sett fra Eikelunden
 
-![](/images/bilde-149.png)
-![](/images/bilde-148.png)
+![](/images/bilde-149.webp)
+![](/images/bilde-148.webp)
 
 ## Ihlen hjørnet
 
-![](/images/bilde-150.png)
-![](/images/bilde-151.png)
+![](/images/bilde-150.webp)
+![](/images/bilde-151.webp)
 
 ## Dulpen 1910 og 2025

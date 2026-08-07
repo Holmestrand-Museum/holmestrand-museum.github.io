@@ -1,7 +1,7 @@
 // Speiler images/ -> public/images/ slik at siden alltid serverer nyeste bilder.
 // Kjøres automatisk via "predev" og "prebuild" i package.json.
 // Nye bilder trenger derfor bare å legges i images/ (public/-kopien holdes oppdatert).
-import { cpSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -11,13 +11,16 @@ const dest = join(root, 'public', 'images');
 
 // Toppnivå-mapper i images/ som er rent kildemateriale og IKKE skal serveres/publiseres.
 // (Web-vennlige versjoner legges i egne mapper, f.eks. images/tordenskiold-web/.)
-const IGNORE_TOP = new Set(['tordenskiold']);
+const IGNORE_TOP = new Set(['tordenskiold', 'til restaurering']);
 
 if (!existsSync(src)) {
   console.log('[sync-images] ingen images/-mappe – hopper over');
   process.exit(0);
 }
 
+// Speil ordentlig: tøm dest først, så foreldede filer (slettede/konverterte
+// kildebilder, f.eks. gamle .png etter PNG->WebP) ikke blir liggende igjen.
+rmSync(dest, { recursive: true, force: true });
 mkdirSync(dest, { recursive: true });
 
 let count = 0;

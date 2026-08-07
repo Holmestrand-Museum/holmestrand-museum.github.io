@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "sync-images": "node scripts/sync-images.mjs",
+    "bilder": "node scripts/optimize-images.mjs && node scripts/sync-images.mjs",
     "restaurerte": "node scripts/build-restaurerte.mjs",
     "predev": "node scripts/sync-images.mjs",
     "prebuild": "node scripts/sync-images.mjs",

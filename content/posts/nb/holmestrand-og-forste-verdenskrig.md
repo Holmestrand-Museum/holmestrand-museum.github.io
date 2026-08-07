@@ -206,7 +206,7 @@ Tekst og research: Tom Amundsen
 ![](/images/bilde-338.jpg)
 ![](/images/bilde-339.jpg)
 ![](/images/bilde-340.jpg)
-![](/images/bilde-342.png)
+![](/images/bilde-342.webp)
 ![](/images/bilde-333.jpg)
 ![](/images/bilde-187.jpg)
 ![](/images/bilde-188.jpg)

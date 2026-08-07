@@ -27,12 +27,12 @@ I utgangspunktet var stemmen ifølge ham selv “en bløt baryton”, men i sama
 Sommeren 1927 fikk Siegfried Wagner hentet Graarud til Wagner-festspillene i Bayreuth. Her ble han en av hovedkreftene i årene frem til 1931, og han vant særlig respekt for sine tolkninger av Tristan i Tristan og Isolde, Siegmund i Valkyrien og tittelrollen i Parsifal. I Bayreuth sang han også Siegfried i Götterdämmerung; kildene antyder imidlertid at denne rollen tøyde Graaruds vokale krefter til det ytterste. 1929–37 hadde han kontrakt med Wiener Staatsoper, som ble innledet med Tristan under Wilhelm Furtwängler. Her sang han også tittelrollen i Mozarts Idomeneo under Richard Strauss, i Strauss’ nyorkestrering av denne operaen 1931. Graarud gjestet Festspillene i Salzburg i midten av 1930-årene, som Aegist i Strauss’ Elektra og med tittelrollen i Hugo Wolfs Der Corregidor, sistnevnte under Bruno Walter. Hans eneste opptreden ved Covent Garden i London skjedde 1936, som Herodes i Richard Strauss’ Salome under Hans Knappertsbusch. Samme år ble han utnevnt til østerriksk kammersanger, og året etter ble han professor ved Musikkhøyskolen i Wien.
 
 <figure>
-<img src="/images/bilde-352.png" alt="Gunnar Graarud i kostyme for en av sine mange operaroller" />
+<img src="/images/bilde-352.webp" alt="Gunnar Graarud i kostyme for en av sine mange operaroller" />
 <figcaption>Gunnar Graarud i kostyme – som tenor utmerket han seg særlig i Wagners store helteroller.</figcaption>
 </figure>
 
 <figure>
-<img src="/images/bilde-353.png" alt="Gunnar Graarud i brynje og hjelm, klar for scenen" />
+<img src="/images/bilde-353.webp" alt="Gunnar Graarud i brynje og hjelm, klar for scenen" />
 <figcaption>I rustning og brynje, klar for scenen. Rollene i Wagners verker krevde både en bærende stemme og sterkt dramatisk nærvær.</figcaption>
 </figure>
 

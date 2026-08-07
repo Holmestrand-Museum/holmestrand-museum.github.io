@@ -25,11 +25,11 @@ Nils vokste således opp med sin sterkt religiøse mor og sin søster. Store Nor
 Familien bodde i Crøgergården som lå i Langgaten mellom Hotel Societeten og det som i dag er Kjærsenteret. Huset eides opprinnelig av Holst slekten, før den i 1867 ble solgt til Christines far, Jens Smedstad. Han solgte den nordre delen til sin svigersønn Nils. Crøgergården ble revet i 1965.
 
 <div class="image-pair">
-<figure><img src="/images/bilde-356.png" alt="Crøgergården sett fra sør" /><figcaption>Crøgergården sett fra sør. Tegningen ble publisert i Tønsbergs blad, lørdag 4. november 1995</figcaption></figure>
-<figure><img src="/images/bilde-357.png" alt="Bakgården til Crøgergården" /><figcaption>Bakgården, tegnet av Finn Johnsen (Jarlsberg, lørdag 28. november 1998)</figcaption></figure>
+<figure><img src="/images/bilde-356.webp" alt="Crøgergården sett fra sør" /><figcaption>Crøgergården sett fra sør. Tegningen ble publisert i Tønsbergs blad, lørdag 4. november 1995</figcaption></figure>
+<figure><img src="/images/bilde-357.webp" alt="Bakgården til Crøgergården" /><figcaption>Bakgården, tegnet av Finn Johnsen (Jarlsberg, lørdag 28. november 1998)</figcaption></figure>
 </div>
 
-<figure class="image-right"><img src="/images/bilde-358.png" alt="Christine, Nils Kjærs mor" /><figcaption>Nils sin mor, Christine</figcaption></figure>
+<figure class="image-right"><img src="/images/bilde-358.webp" alt="Christine, Nils Kjærs mor" /><figcaption>Nils sin mor, Christine</figcaption></figure>
 
 Etter mannen død, ble det noen vanskelige år for enken Christine. Hun begynte en liten forretning i gården, men hun var så runhåndet med kreditt til sine kunder at hun til slutt måtte selge eiendommen i 1875. Familien støttet opp slik at unge Nils fikk fullført sin utdannelse.
 

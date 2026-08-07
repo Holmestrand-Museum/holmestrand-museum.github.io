@@ -6,7 +6,7 @@ type: page
 status: publish
 lang: nb
 ---
-[![](/images/bilde-154.png)](https://holmestrandmuseum.no/holmestrand-for-og-etter/)
+[![](/images/bilde-154.webp)](https://holmestrandmuseum.no/holmestrand-for-og-etter/)
 
 #### [Holmestrand Før og etter](https://holmestrandmuseum.no/holmestrand-for-og-etter/)
 

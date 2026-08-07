@@ -42,7 +42,7 @@ None
 
 Hvem skrev "Holmestrandiania"?
 
-![](/images/bilde-212.png)
+![](/images/bilde-212.webp)
 
 Fredrik Holst
 
@@ -112,7 +112,7 @@ None
 
 Når innvilget Kong Christian V Holmestrand å bygge en ny kirke?
 
-![](/images/bilde-119.png)
+![](/images/bilde-119.webp)
 
 1671
 
@@ -152,7 +152,7 @@ Legge ut gift i alle kjellere
 
 None
 
-![clock.png](/images/bilde-113.png)
+![clock.png](/images/bilde-113.webp)
 
 Time's up
 
