@@ -21,6 +21,8 @@ const out = join(root, 'src', 'data', 'restaurerte.json');
 
 const PHOTOG = { louisewold: 'Louise Wold' };
 const isImg = (f) => /\.(jpe?g|png|webp)$/i.test(f);
+// Filer som IKKE er før/nå-par (f.eks. hero-/flisbilde satt sammen av flere motiv).
+const IGNORE = new Set(['hero']);
 
 function titlecase(s) {
   return s
@@ -62,6 +64,7 @@ const pairs = {};
 for (const f of readdirSync(dir).filter(isImg)) {
   const ext = extname(f);
   const noext = basename(f, ext);
+  if (IGNORE.has(noext.toLowerCase())) continue;
   if (noext.endsWith('R')) {
     const base = noext.slice(0, -1);
     (pairs[base] ??= {}).rest = f;
