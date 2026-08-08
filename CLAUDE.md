@@ -126,8 +126,18 @@ Bygges gradvis — ikke alt på en gang. Foreslå rekkefølge.
 
 ## Publisering
 
-- Siden hostes på **GitHub Pages** (repo `Holmestrand-Museum/hmfnettside`),
-  ikke på hotell — ingen planlagte funksjoner krever server.
+- **To repoer:** kildekoden ligger i `Holmestrand-Museum/hmfnettside` (git-remote
+  `origin`). Den **live testsiden** serveres fra org-rot-repoet
+  `Holmestrand-Museum/holmestrand-museum.github.io` (git-remote `pages`), som ligger
+  på rot-adressen `https://holmestrand-museum.github.io/`.
+- **Hvorfor eget rot-repo:** innholdet har ~398 hardkodede `/images/…`-stier. På en
+  prosjekt-underside (`/hmfnettside/`) ville de brutt; rot unngår all base-triksing
+  og matcher framtidig produksjon på `holmestrandmuseum.no` (også rot). GitHub Pages
+  er derfor bare aktivert i `…github.io`-repoet, ikke i `hmfnettside`.
+- **Publiser med `npm run deploy`** (= `git push pages main`). Det trigger
+  `deploy.yml` i rot-repoet og oppdaterer live-siden. **Push til `origin` gjør IKKE
+  siden live** — Pages er ikke aktivert der. Kort sagt: utvikling → `origin`,
+  publisering → `npm run deploy`.
 - Domenet **`holmestrandmuseum.no`** er registrert hos **Uniweb**. Ved lansering
   må DNS peke fra Uniweb til GitHub Pages (gjøres i Uniwebs kontrollpanel, ikke
   WP-admin). Gammel WordPress-side beholdes urørt som fallback til alt er bekreftet.
